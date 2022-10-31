@@ -1,0 +1,183 @@
+.hero__button,
+.footer__button,
+.modal__button {
+    @extend %button;
+
+    min-width: 200px;
+    padding: 10px 32px;
+    background-color: $accentColor;
+    color: $whiteTextColor;
+    cursor: pointer;
+
+    transition: background-color $transition, color $transition;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.9;
+    letter-spacing: 0.06em;
+
+    &:hover,
+    &:focus {
+        background-color: $accentColorSecondary;
+        color: $whiteTextColor;
+    }
+}
+
+.footer__button {
+    padding: 10px 29px;
+
+    @media screen and (min-width: 1200px) {
+        display: flex;
+        align-items: center;
+        margin-left: 12px;
+    }
+}
+
+.button__icon {
+    display: inline-block;
+    width: 24px;
+    height: 24px;
+    margin-left: 10px;
+}
+
+.modal__button {
+    box-shadow: $boxShadow;
+}
+
+.works__button {
+    @extend %button;
+    padding: 6px 22px;
+    background-color: $bgSecondaryColor;
+    color: $secondaryTextColor;
+    cursor: pointer;
+
+    transition: background-color $transition, color $transition,
+        box-shadow $transition;
+
+    font-weight: 500;
+    font-size: 16px;
+    line-height: 1.6;
+
+    &--current,
+    &:hover,
+    &:focus {
+        background-color: $accentColor;
+        color: $whiteTextColor;
+        box-shadow: $boxShadowWorksNav;
+    }
+}
+
+
+
+// ===============================================================
+.button__primary--light {
+    @extend %button;
+    @extend %button__primary;
+
+    @include btn-color(#FFFFFF, #D41443);
+
+    &:hover,
+    &:focus {
+        background-color: #ECEBEB;
+    }
+}
+
+.button__primary--accent {
+    @extend %button;
+    @extend %button__primary;
+
+    @include btn-color(#D41443, #FFFFFF);
+
+    &:hover,
+    &:focus {
+        background-color: #C7133E;
+    }
+}
+
+.button__menu {
+    @extend %button;
+    @extend %button__primary;
+    @include btn-color(#FFFFFF, #D41443);
+
+    min-width: 100%;
+
+    @media screen and (min-width: 768px) {
+        min-width: 186px;
+    }
+
+    &:hover,
+    &:focus {
+        background-color: #ECEBEB;
+    }
+}
+
+.button__secondary--light {
+    @extend %button;
+    @extend %button__secondary;
+    @include btn-color(#D41443, #FFFFFF);
+
+    &:hover,
+    &:focus {
+        background-color: #C7133E;
+    }
+}
+
+.button__secondary--accent {
+    @extend %button;
+    @extend %button__secondary;
+    @include btn-color(#FFFFFF, #D41443);
+
+    &:hover,
+    &:focus {
+        background-color: #ECEBEB;
+    }
+}
+
+
+// =============================================
+@mixin btn-color ($bg, $color) {
+    background-color: $bg;
+    color: $color;
+}
+
+// =======================================================
+%button {
+    display: inline-block;
+    font-family: inherit;
+    text-align: center;
+    border: 0;
+
+    transition: background-color $animation;
+}
+
+%button__primary {
+    padding: 11px 40px;
+    border-radius: 22px;
+
+    font-weight: 700;
+    font-size: 16px;
+    line-height: 1.31;
+
+    &::after {
+        display: inline-block;
+        margin-left: 13px;
+        content: '>';
+        vertical-align: -5%;
+        height: 10px;
+        width: 5px;
+    }
+}
+
+%button__secondary {
+    padding: 7px 13px;
+    border-radius: 20px;
+
+    font-size: 8px;
+    line-height: 1.25;
+
+    @media screen and (min-width: 1280px) {
+        padding: 11px 23px;
+        font-size: 14px;
+        line-height: 1.29;
+    }
+}
