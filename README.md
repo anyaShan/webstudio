@@ -1,3 +1,3 @@
-# goit-markup-hw-07
+# goit-webstudio
 
-HTML+CSS. Модуль 7. Д.з.
+HTML+CSS
